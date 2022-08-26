@@ -5,6 +5,14 @@ const app = express(); // Initialize express as an app variable
 app.set("port", process.env.PORT || 6969); // Set the port
 app.use(express.json()); // Enable the server to handle JSON requests
 app.use(cors()); // Dont let local development give errors
+app.use(cors({
+  origin: ['http://127.0.0.1:8080', 'http://localhost:8080'],
+  credentials: true
+}));
+// credentials will allow you to access the cookie on your fetch(url, 
+{
+credentials: 'include'
+}
 
 // Import routes
 const userRoute = require("./routes/userRoute");
