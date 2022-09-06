@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="heading">
+            <h1>HELLO USER!!</h1>
+        </div>
+        <div class="tables mt-5">
+            <div class="user mt-5">
+
+                <h3>USERS TABLE</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>REQUEST METHOD</th>
+                            <th>PATH</th>
+                            <th>RESULTS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GET ALL</td>
+                            <td>"/"</td>
+                            <td>GET ALL USERS</td>
+                        </tr>
+                        <tr>
+                            <td>GET ONE</td>
+                            <td>"/:id"</td>
+                            <td>GET ONE USER WITH MATCHING ID</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>"/"</td>
+                            <td>ADD NEW USER</td>
+                        </tr>
+                        <tr>
+                            <td>PUT</td>
+                            <td>"/:id"</td>
+                            <td>UPDATE USER WITH MATCHING ID</td>
+                        </tr>
+                        <tr>
+                            <td>DELETE</td>
+                            <td>"/:id"</td>
+                            <td>DELETE USER WITH MATCHING ID</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>"/register"</td>
+                            <td>REGISTER USER</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>"/login"</td>
+                            <td>LOGIN USER</td>
+                        </tr>
+                        <tr>
+                            <td>GET</td>
+                            <td>"/users/verify"</td>
+                            <td>VERIFY USER</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="product">
+
+                <table>
+                    <h3>PRODUCTS TABLE</h3>
+                    <thead>
+                        <tr>
+                            <th>REQUEST METHOD</th>
+                            <th>PATH</th>
+                            <th>RESULTS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GET ALL</td>
+                            <td>"/"</td>
+                            <td>GET ALL PRODUCTS</td>
+                        </tr>
+                        <tr>
+                            <td>GET ONE</td>
+                            <td>"/:id"</td>
+                            <td>GET ONE PRODUCT WITH MATCHING ID</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>"/"</td>
+                            <td>ADD NEW PRODUCT</td>
+                        </tr>
+                        <tr>
+                            <td>PUT</td>
+                            <td>"/:id"</td>
+                            <td>UPDATE PRODUCT WITH MATCHING ID</td>
+                        </tr>
+                        <tr>
+                            <td>DELETE</td>
+                            <td>"/:id"</td>
+                            <td>DELETE PRODUCT WITH MATCHING ID</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
