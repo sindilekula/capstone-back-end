@@ -4,7 +4,7 @@ const con = require("../lib/db_connection");
 const middleware = require("../middleware/auth");
 
 // GET ALL PRODUCTS
-router.get("/", (req, res) => {
+router.get("/", middleware, (req, res) => {
     try {
       con.query(`SELECT * FROM products`, (err, result) => {
         if (err) throw err;
@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 });
 
   // GET A SINGLE PRODUCT BY ID
-router.get("/:id", (req, res) => {
+router.get("/:id", middleware, (req, res) => {
     try {
       con.query(`SELECT * FROM products where product_id = ${req.params.id}`, (err, result) => {
         if (err) throw err;
@@ -49,7 +49,7 @@ router.post('/', middleware, (req, res) => {
 
 // DELETE A PRODUCT BY ID
 router.delete("/:id", middleware, (req, res) => {
-    if (req.user.role === "admin"){
+    // if (req.user.role === "admin"){
     try {
       con.query(`DELETE FROM products where product_id = ${req.params.id}`, (err, result) => {
         if (err) throw err;
@@ -59,9 +59,9 @@ router.delete("/:id", middleware, (req, res) => {
       console.log(error);
       res.status(400).send(error);
     }
-  }else {
-    res.send("Access denied")
-  };
+  // }else {
+  //   res.send("Access denied")
+  // };
 });
 
 // UPDATE A PRODUCT BY ID
