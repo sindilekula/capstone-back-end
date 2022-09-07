@@ -4,7 +4,7 @@ const con = require("../lib/db_connection");
 const middleware = require("../middleware/auth");
 
 // GET ALL PRODUCTS
-router.get("/", middleware, (req, res) => {
+router.get("/", (req, res) => {
     try {
       con.query(`SELECT * FROM products`, (err, result) => {
         if (err) throw err;
