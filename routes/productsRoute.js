@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 });
 
   // GET A SINGLE PRODUCT BY ID
-router.get("/:id", middleware, (req, res) => {
+router.get("/:id", (req, res) => {
     try {
       con.query(`SELECT * FROM products where product_id = ${req.params.id}`, (err, result) => {
         if (err) throw err;
@@ -48,8 +48,8 @@ router.post('/', middleware, (req, res) => {
 });
 
 // DELETE A PRODUCT BY ID
-router.delete("/:id", middleware, (req, res) => {
-    if (req.user.role === "admin"){
+router.delete("/:id", (req, res) => {
+    if (req.user.role == "admin"){
     try {
       con.query(`DELETE FROM products where product_id = ${req.params.id}`, (err, result) => {
         if (err) throw err;
@@ -65,7 +65,7 @@ router.delete("/:id", middleware, (req, res) => {
 });
 
 // UPDATE A PRODUCT BY ID
-router.put('/:id', middleware, (req, res) => {
+router.put('/:id', (req, res) => {
     if (req.user.role === "admin") {
     const { name, category, image, price, color,  size, description } = req.body
     try {
