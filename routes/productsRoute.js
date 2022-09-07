@@ -63,7 +63,6 @@ router.delete("/:id", (req, res) => {
 
 // UPDATE A PRODUCT BY ID
 router.put('/:id', (req, res) => {
-    if (req.user.role === "admin") {
     const { name, category, image, price, color,  size, description } = req.body
     try {
         con.query(`UPDATE products set name='${name}', category='${category}', image='${image}', price='${price}', color='${color}', size='${size}', description='${description}' WHERE product_id=${req.params.id}`, 
@@ -74,9 +73,6 @@ router.put('/:id', (req, res) => {
     } catch (error) {
        console.log(err) 
     }
-    }else {
-      res.send("Access denied")
-    };
 });
 
 module.exports = router;
