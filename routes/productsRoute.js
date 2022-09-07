@@ -49,7 +49,7 @@ router.post('/', middleware, (req, res) => {
 
 // DELETE A PRODUCT BY ID
 router.delete("/:id", (req, res) => {
-    if (req.user.role == "admin"){
+   
     try {
       con.query(`DELETE FROM products where product_id = ${req.params.id}`, (err, result) => {
         if (err) throw err;
@@ -59,9 +59,6 @@ router.delete("/:id", (req, res) => {
       console.log(error);
       res.status(400).send(error);
     }
-  }else {
-    res.send("Access denied")
-  };
 });
 
 // UPDATE A PRODUCT BY ID
